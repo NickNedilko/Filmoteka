@@ -10,7 +10,6 @@ import { Avatar, Content, ReviewAvtor, ReviewCard, ReviewsList } from "./MovieRe
     const { id } = useParams();
 
 
-    console.log(reviews)
 useEffect(() => {
     if (!id) {
       return;

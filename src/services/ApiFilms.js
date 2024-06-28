@@ -86,3 +86,13 @@ export const apiReviewsById = async filmId => {
   );
   return reviews;
 };
+
+
+
+export const apiVideoById = async (filmId) => {
+  const video = await axios.get(
+    `https://api.kinocheck.de/movies?tmdb_id=${String(filmId)}`,
+   
+  );
+  return video;
+};

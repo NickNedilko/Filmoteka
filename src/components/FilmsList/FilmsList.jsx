@@ -1,11 +1,10 @@
 import { Link, useLocation } from "react-router-dom"
-import { FilmCard, FilmTitle, List, ListTitle, Poster, Vote } from "./FilmsList.styled"
+import { AddFavorite, FilmCard, FilmTitle, List, ListTitle, Poster, Vote } from "./FilmsList.styled"
 
 
 
 export const FilmsList = ({ films, children }) => {
     const location = useLocation();
-    console.log(films)
     return (
         <>
             <ListTitle>{children}</ListTitle>
@@ -18,7 +17,8 @@ export const FilmsList = ({ films, children }) => {
                 <FilmTitle>Title: {title}</FilmTitle>
                 <Vote>Avarage vote: {Math.round(vote_average*10)}%</Vote>
             </Link>
-                </FilmCard>
+            <AddFavorite/>
+            </FilmCard>
  ))}
   </List> 
         </> 

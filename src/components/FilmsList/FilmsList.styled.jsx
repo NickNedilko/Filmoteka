@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { FaHeart } from "react-icons/fa6";
+
 
 
 export const List = styled.ul`
@@ -6,6 +8,14 @@ export const List = styled.ul`
     text-align: center;
     flex-wrap: wrap;
     gap: 25px;
+`
+
+export const AddFavorite = styled(FaHeart)`
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    fill: aliceblue;
+    font-size: 25px;
 `
 export const ListTitle = styled.h1`
     font-size: 35px;
@@ -30,6 +40,7 @@ export const Vote = styled.p`
 
 export const FilmCard = styled.li`
     width: 340px;
+    position: relative;
     border: 1px solid black;
     background: var(--bgd-header);
     border-radius: 15px;

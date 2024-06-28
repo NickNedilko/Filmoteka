@@ -32,3 +32,12 @@ export const SubTitle = styled.h3`
     font-weight: 600;
     margin: 10px 0;
 `
+
+export const Button = styled.button`
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+`

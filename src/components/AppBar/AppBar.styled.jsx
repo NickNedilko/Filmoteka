@@ -8,9 +8,14 @@ export const Nav = styled.nav`
     
 `;
 
+export const Logo = styled.span`
+    font-size: 55px;
+`
+
 export const List = styled.ul`
     display: flex;
     gap: 20px;
+    padding: 20px 0;
 
     @media screen and (min-width: 768px) {
         gap: 30px;

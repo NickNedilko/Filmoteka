@@ -8,11 +8,11 @@ export const StyledHeader = styled.header`
     padding: 10px 20px;
 
     @media screen and (min-width: 768px) {
-        padding: 20px 30px;
+        padding: 10px 30px;
     }
 
     @media screen and (min-width: 1200px) {
-        padding: 20px 40px;
+        padding: 10px 40px;
     }
     
 `;
