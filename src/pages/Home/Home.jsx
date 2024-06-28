@@ -7,6 +7,8 @@ import FilmListLoader from "../../components/FilmListLodaer/FilmListLoder";
 const Home = () => {
     const [trendFilms, setTrendFilms] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
+    const [error, setError] = useState(null)
+
 
 
   
@@ -16,13 +18,15 @@ const Home = () => {
         apiTrendFilms().then(({ data }) => {
             setTrendFilms(data.results);
             setIsLoading(false)
-        });
+            setError('')
+        }).catch(error=>setError(error.message));
     }, []);
     
 
     return (
         <div>
-            {isLoading?<FilmListLoader/> :<FilmsList films={trendFilms }>Trending Films</FilmsList>}
+            {error && <h1>{error}</h1>}
+            {!error && isLoading? <FilmListLoader/> :<FilmsList films={trendFilms }>Trending Films</FilmsList>}
         </div>
     )
     }
