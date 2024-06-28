@@ -4,6 +4,7 @@ import { lazy } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import SharedLayout from './components/SharedLayout/SharedLayout'
+import { NotFindPage } from './pages/NotFindPage/NotFindPage';
 
 
 
@@ -29,7 +30,7 @@ function App() {
             <Route path='cast' element={<MovieCast/>}/> 
             <Route path='reviews' element={<MovieReviews />}/> 
           </Route>
-          <Route path='*' element={<h1>Not Found</h1>}/>
+          <Route path='*' element={<NotFindPage/>}/>
           </Route>
       </Routes>
      </div>
