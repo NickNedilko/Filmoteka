@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
     width: 100%;
+    margin-bottom: 20px;
     background: var(--bgd-header);
     padding: 10px 20px;
 

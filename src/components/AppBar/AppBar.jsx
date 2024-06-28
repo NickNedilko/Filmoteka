@@ -13,9 +13,12 @@ export const AppBar = () => {
         <List>
           <li><StyledLink to="/" 
           aria-label='home'
-          onClick={(e) => e.target.blur()}>Home</StyledLink></li>
-          <li><StyledLink to="films" 
-          aria-label='films'
+            onClick={(e) => e.target.blur()}>Home</StyledLink></li>
+          <li><StyledLink to="upcoming" 
+          aria-label='upcoming'
+          onClick={(e) => e.target.blur()}>Upcoming Films</StyledLink></li>
+          <li><StyledLink to="movies" 
+          aria-label='movies'
           onClick={(e) => e.target.blur()}>Films</StyledLink></li>
         </List>
       </Nav>

@@ -9,6 +9,9 @@ import { HashLink } from 'react-router-hash-link';
 
 export const StyledFooter = styled.footer`
     width: 100%;
+    position: relative;
+    bottom: 0%;
+    margin-top: 20px;
     background: var(--bgd-header);
     padding: 20px;
     display: flex;
