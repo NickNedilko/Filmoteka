@@ -13,5 +13,4 @@ export const Image = styled.img`
   height: 600px;
   border-radius: 10px;
   overflow: hidden;
-    
 `
