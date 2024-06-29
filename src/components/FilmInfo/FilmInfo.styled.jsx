@@ -37,9 +37,13 @@ export const Button = styled.button`
     padding: 10px;
     margin-top: 15px;
     border-radius: 10px;
+    color: blueviolet;
+    font-size: 18px;
+    font-weight: 600;
     font-size: 20px;
     cursor: pointer;
     outline: none;
+
 `
 
     export const GalleryTitle = styled.h2`
