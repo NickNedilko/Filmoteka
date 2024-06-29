@@ -2,17 +2,23 @@ import { useLocation } from "react-router-dom";
 import * as ReactDOM from 'react-dom';
 import { BackLink } from "../BackLink/BackLink";
 import { MoreIndormation } from "../MoreInformation/MoreIndormation";
-import { Button, FilmCard, FilmPoster, SubTitle, Title, Wrapper } from "./FilmInfo.styled";
+import { Button, FilmCard, FilmPoster, GalleryTitle, SubTitle, Title, Wrapper } from "./FilmInfo.styled";
 import { useRef, useState } from "react";
-import { apiVideoById } from "../../services/ApiFilms";
+import { apiImagesById, apiVideoById } from "../../services/ApiFilms";
 import Modal from "../Modal/Modal";
 import { VideoPlayer } from "../VideoPlayer/VideoPlayer";
+import { ImageSwiper } from "../Slider/Swiper";
+
+
+
 
 
 
 
 export const FilmInfo = ({ film }) => {
     const [videoId, setVideoId] = useState(null)
+    const [images, setImages] = useState([])
+
     const [isOpen, setIsOpen] = useState(false)
 
     const location = useLocation();
@@ -29,8 +35,18 @@ export const FilmInfo = ({ film }) => {
         const videoId = data.trailer?.youtube_video_id;
         setVideoId(videoId);
     }
-   filmVideo(id)
 
+    filmVideo(id)
+    
+     const filmImages = async (id) => {
+        const {data} = await apiImagesById(id);
+       setImages(data.backdrops )
+    }
+
+   filmImages(id)
+
+const imagesArr = images.map(({file_path} )=> `https://image.tmdb.org/t/p/w500${file_path}`)
+  
     return (
         <>
             <BackLink to={backLocation.current}>Back</BackLink>
@@ -53,9 +69,14 @@ export const FilmInfo = ({ film }) => {
                         <Modal onClose={closeModal}><VideoPlayer id={videoId} /></Modal>,
                       document.querySelector('#modal-root')
                     )}
-
-            </Wrapper>
+                </Wrapper>
             </FilmCard>
+            <>
+            <GalleryTitle>Movie images</GalleryTitle>
+        <ImageSwiper images={imagesArr } />
+            </>
+            
+      
         </>
     )
 }

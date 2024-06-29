@@ -1,4 +1,6 @@
 @import-normalize;
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
 
 :root {
   --bgd-color: #eeeff4;

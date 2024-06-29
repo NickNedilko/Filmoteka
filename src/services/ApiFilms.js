@@ -65,6 +65,21 @@ export const apiFilmById = async filmId => {
   return films;
 };
 
+export const apiImagesById = async filmId => {
+  const images = await axios.get(
+    `https://api.themoviedb.org/3/movie/${filmId}/images`,
+    {
+      params: {
+        api_key: '16c3209db9c8e0f5838703cf6ff99055',
+      },
+    }
+  );
+  return images;
+};
+
+
+
+
 export const apiCastById = async filmId => {
   const cast = await axios.get(
     `https://api.themoviedb.org/3/movie/${filmId}/credits`,

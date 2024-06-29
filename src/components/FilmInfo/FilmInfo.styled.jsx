@@ -41,3 +41,10 @@ export const Button = styled.button`
     cursor: pointer;
     outline: none;
 `
+
+    export const GalleryTitle = styled.h2`
+    font-size: 30px;
+    color: blueviolet;
+    margin: 15px 0;
+    text-align: center;
+` 
