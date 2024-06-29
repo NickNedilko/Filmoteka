@@ -10,19 +10,23 @@ import FilmListLoader from "../../components/FilmListLodaer/FilmListLoder"
 
 
 export const MoviesPage = () => {
-  const [topRatedFilms, setTopRatedFilms] = useState(null)
-  const [searchFilms, setSearchFilms] = useState(null)
-      const [isLoading, setIsLoading] = useState(true)
-    const [error, setError] = useState(null)
+  const [topRatedFilms, setTopRatedFilms] = useState([])
+  const [searchFilms, setSearchFilms] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState(null)
+  const [page, setPage] = useState(1)
+
+
+    const loadMore = () => setPage(page+1)
   const [searchParams, setSearchParams] = useSearchParams()
   
     useEffect(() => {
-      apiTopRatedFilms().then(({ data }) => {
-        setTopRatedFilms(data.results);
+      apiTopRatedFilms(page).then(({ data }) => {
+        setTopRatedFilms((prev)=>[...prev, ...data.results]);
         setIsLoading(false)
         setError('')
         }).catch(error=>setError(error.message));
-    }, []);
+    }, [page]);
 
    
     
@@ -41,18 +45,18 @@ export const MoviesPage = () => {
         return
         }
         setIsLoading(true)
-        apiSearchFilms(search).then(({data}) => {
-            setSearchFilms(data.results);
+        apiSearchFilms(search, page).then(({data}) => {
+            setSearchFilms((prev)=>[...prev, ...data.results]);
             setIsLoading(false)
             setError('')
         }).catch(error=>setError(error.message));
-    }, [search]);
+    }, [search, page]);
  
   return (
 <div>
         <SearchBar onSubmit={querryInput} />
             {error && <h1>{error}</h1>}
-            {!error && isLoading? <FilmListLoader/>:<FilmsList films={searchFilms ?? topRatedFilms}>{searchFilms? 'Search Films': 'Top Rated Films'}</FilmsList>}
+            {!error && isLoading && page===1? <FilmListLoader/>:<FilmsList films={searchFilms.length>0? searchFilms: topRatedFilms} loadMore={loadMore}>{searchFilms.length>0 ? 'Search Films': 'Top Rated Films'}</FilmsList>}
         </div>
     )
 }

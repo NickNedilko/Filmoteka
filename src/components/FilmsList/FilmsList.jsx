@@ -1,15 +1,24 @@
 import { Link, useLocation } from "react-router-dom"
 import { AddFavorite, FilmCard, FilmTitle, List, ListTitle, Poster, Vote } from "./FilmsList.styled"
+import InfiniteScroll from "react-infinite-scroll-component";
+import { Loader } from "../Loader/Loader";
 
 
 
-export const FilmsList = ({ films, children }) => {
+export const FilmsList = ({ films, children, loadMore }) => {
     const location = useLocation();
     return (
         <>
             <ListTitle>{children}</ListTitle>
-             <List>
-        {films?.map(({ id, title, poster_path, vote_average
+           
+                <InfiniteScroll
+          dataLength={films?.length}
+          next={loadMore}
+          hasMore={true}
+          loader={<Loader/>}
+            >
+                 <List>
+             {films?.map(({ id, title, poster_path, vote_average
             }) => (
             <FilmCard key={id}>
             <Link  to={`/movies/${id}`} state={{from:location}} >
@@ -20,7 +29,9 @@ export const FilmsList = ({ films, children }) => {
             <AddFavorite/>
             </FilmCard>
  ))}
-  </List> 
+ </List> 
+        </InfiniteScroll>
+   
         </> 
     )
 }

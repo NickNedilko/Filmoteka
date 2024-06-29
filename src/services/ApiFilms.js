@@ -1,24 +1,25 @@
 import axios from 'axios';
 
-export const apiTrendFilms = async () => {
+export const apiTrendFilms = async (page) => {
   const films = await axios.get(
     `https://api.themoviedb.org/3/movie/now_playing`,
     {
       params: {
         api_key: '16c3209db9c8e0f5838703cf6ff99055',
+        page
       },
     }
   );
   return films;
 };
 
-export const apiUpComingFilms = async () => {
+export const apiUpComingFilms = async (page) => {
   const films = await axios.get(
     `https://api.themoviedb.org/3/movie/upcoming`,
     {
       params: {
         api_key: '16c3209db9c8e0f5838703cf6ff99055',
-        
+        page
       },
     }
   );
@@ -26,12 +27,13 @@ export const apiUpComingFilms = async () => {
 };
 
 
-export const apiTopRatedFilms = async () => {
+export const apiTopRatedFilms = async (page) => {
   const films = await axios.get(
     `https://api.themoviedb.org/3/movie/top_rated`,
     {
       params: {
         api_key: '16c3209db9c8e0f5838703cf6ff99055',
+        page
       },
     }
   );
@@ -39,12 +41,12 @@ export const apiTopRatedFilms = async () => {
 };
 
 
-export const apiSearchFilms = async search => {
+export const apiSearchFilms = async (search, page) => {
   const films = await axios.get(`https://api.themoviedb.org/3/search/movie`, {
     params: {
       api_key: '16c3209db9c8e0f5838703cf6ff99055',
       query: search,
-      page: 1,
+      page,
     },
   });
   return films;
