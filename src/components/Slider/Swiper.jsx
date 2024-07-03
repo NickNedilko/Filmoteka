@@ -11,7 +11,7 @@ export const ImageSwiper = ({images, title}) => {
       <Swiper
           modules={[ Pagination, Navigation, EffectCoverflow]}
           pagination={true}
-          navigation={true}
+          navigation={true} 
           loop={true}
           grabCursor={true}
           slidesPerView={2}
@@ -30,34 +30,34 @@ export const ImageSwiper = ({images, title}) => {
               <img src={images[2]} alt={title} loading="lazy"/>
       </SwiperSlide>
        <SwiperSlide >
-              <img src={images[3]} alt={title} loading="lazy"/>
+              <img src={images[3]?? images[3]} alt={title} loading="lazy"/>
       </SwiperSlide>
        <SwiperSlide >
-              <img src={images[4]} alt={title} loading="lazy"/>
+              <img src={images[4] ?? images[2]} alt={title} loading="lazy"/>
       </SwiperSlide>
        <SwiperSlide >
-              <img src={images[5]} alt={title} loading="lazy"/>
+              <img src={images[5] ?? images[1]} alt={title} loading="lazy"/>
       </SwiperSlide>
        <SwiperSlide >
-              <img src={images[6]} alt={title} loading="lazy"/>
+              <img src={images[6] ?? images[0]} alt={title} loading="lazy"/>
       </SwiperSlide>
        <SwiperSlide >
-              <img src={images[7]} alt={title} loading="lazy"/>
+              <img src={images[7] ?? images[3]} alt={title} loading="lazy"/>
       </SwiperSlide>
        <SwiperSlide >
-              <img src={images[8]} alt={title} loading="lazy"/>
+              <img src={images[8] ?? images[2]} alt={title} loading="lazy"/>
       </SwiperSlide>
        <SwiperSlide >
-              <img src={images[9]} alt={title} loading="lazy"/>
+              <img src={images[9] ?? images[1]} alt={title} loading="lazy"/>
       </SwiperSlide>
        <SwiperSlide >
-              <img src={images[10]} alt={title} loading="lazy"/>
+              <img src={images[10] ?? images[0]} alt={title} loading="lazy"/>
       </SwiperSlide>
        <SwiperSlide >
-              <img src={images[11]} alt={title} loading="lazy"/>
+              <img src={images[11] ?? images[3]} alt={title} loading="lazy"/>
       </SwiperSlide>
        <SwiperSlide >
-              <img src={images[12]} alt={title} loading="lazy"/>
+              <img src={images[12] ?? images[2]} alt={title} loading="lazy"/>
             </SwiperSlide>
            
           
