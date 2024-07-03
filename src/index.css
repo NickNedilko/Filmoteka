@@ -5,7 +5,7 @@
 :root {
   --bgd-color: #eeeff4;
   --bgd-header: linear-gradient(-45deg, #9925ea, #338aff, #9925ea);
-  --title-color: -webkit-linear-gradient(#9925ea, #338aff, #9925ea);
+  --title-color: blueviolet;
   --text-header: #fff;
   --text-color: #173D33;
   --hover-color: #FFFF00;

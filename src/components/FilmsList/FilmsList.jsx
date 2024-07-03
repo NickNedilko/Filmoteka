@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom"
-import { AddFavorite, FilmCard, FilmTitle, List, ListTitle, Poster, Vote } from "./FilmsList.styled"
+import {  FilmCard, FilmTitle, List, ListTitle, Poster, Vote } from "./FilmsList.styled"
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Loader } from "../Loader/Loader";
 
@@ -26,7 +26,6 @@ export const FilmsList = ({ films, children, loadMore }) => {
                 <FilmTitle>Title: {title}</FilmTitle>
                 <Vote>Avarage vote: {Math.round(vote_average*10)}%</Vote>
             </Link>
-            <AddFavorite/>
             </FilmCard>
  ))}
  </List> 

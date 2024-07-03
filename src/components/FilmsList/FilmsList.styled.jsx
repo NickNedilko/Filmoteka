@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FaHeart } from "react-icons/fa6";
+
 
 
 
@@ -10,16 +10,10 @@ export const List = styled.ul`
     gap: 25px;
 `
 
-export const AddFavorite = styled(FaHeart)`
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    fill: aliceblue;
-    font-size: 25px;
-`
+
 export const ListTitle = styled.h1`
     font-size: 35px;
-    color: blueviolet;
+    color: var(--title-color);
     margin: 15px 0;
     text-align: center;
 ` 

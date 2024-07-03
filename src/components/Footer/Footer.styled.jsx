@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 import { HashLink } from 'react-router-hash-link';
-// import { ReactComponent as Linkedin} from '../../assets/icons/linkedin.svg';
-// import { ReactComponent as Github} from '../../assets/icons/github.svg';
-// import { ReactComponent as Telegram} from '../../assets/icons/telegram.svg';
-// import { ReactComponent as Telephone} from '../../assets/icons/phone.svg';
-// import { ReactComponent as Email} from '../../assets/icons/mail.svg';
-// import { ReactComponent as Arrow} from '../../assets/icons/arrow.svg';
+
 
 export const StyledFooter = styled.footer`
     width: 100%;

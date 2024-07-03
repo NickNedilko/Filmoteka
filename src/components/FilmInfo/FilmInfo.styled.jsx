@@ -1,3 +1,4 @@
+import { FaHeart } from "react-icons/fa";
 import styled from "styled-components";
 
 
@@ -8,6 +9,7 @@ export const Wrapper = styled.div`
 
 export const FilmCard = styled.div`
     display: flex;
+    position: relative;
     gap: 20px;
     border: 1px solid black;
     border-radius: 10px;
@@ -48,7 +50,16 @@ export const Button = styled.button`
 
     export const GalleryTitle = styled.h2`
     font-size: 30px;
-    color: blueviolet;
+    color: var(--title-color);
     margin: 15px 0;
     text-align: center;
 ` 
+
+export const AddWatchList = styled(FaHeart)`
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    fill: aliceblue;
+    font-size: 35px;
+    fill: ${(props)=>(props.watchlist ? "red" : "white")}
+`

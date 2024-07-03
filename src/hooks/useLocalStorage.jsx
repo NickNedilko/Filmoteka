@@ -1,35 +1,35 @@
 import { useState } from "react";
-x
+
 export const useLocalStorage = ()=>{
-    const setLocal = (film) =>localStorage.setItem('favorite', JSON.stringify(film));
+    const setLocal = (film) =>localStorage.setItem('watchList', JSON.stringify(film));
       
    const getLocal = ()=> {
-        const data = localStorage.getItem('favorite');
+        const data = localStorage.getItem('watchList');
        return data !== null ? JSON.parse(data): []
     }
     
-    const [favorites, setFavorites] = useState(()=>getLocal())
+    const [watchList, setWatchList] = useState(()=>getLocal())
 
 
 const addToLocal = (film)=>{
-    const savedFavorites = getLocal();
-    savedFavorites.push(film)
-    setFavorites(savedFavorites)
-    setLocal(savedFavorites);
+    const savedWatchList = getLocal();
+    savedWatchList.push(film)
+    setWatchList(savedWatchList)
+    setLocal(savedWatchList);
 }
 
 const remove = (film)=>{
-    const savedFavorites = getLocal();
-    const filter = savedFavorites.filter(item=> item.id !==film.id);
-    setFavorites(filter)
+    const savedWatchList = getLocal();
+    const filter = savedWatchList.filter(item=> item.id !==film.id);
+    setWatchList(filter)
     setLocal(filter);
 }
 
-const toggleFavorite = (film) => {
-    const savedFavorites = getLocal();
+const toggleWatchList = (film) => {
+    const savedWatchList = getLocal();
    
-   const isFavorites = !!savedFavorites.find(item=>item.id===film.id);
-    if(isFavorites){
+   const isWatchList = !!savedWatchList.find(item=>item.id===film.id);
+    if(isWatchList){
         remove(film)
     }else{
         addToLocal(film)
@@ -38,6 +38,6 @@ const toggleFavorite = (film) => {
     
 }
 
-return {toggleFavorite, favorites, remove, addToLocal, setLocal, getLocal};
+return {toggleWatchList, watchList, remove, addToLocal, setLocal, getLocal};
 
 }
