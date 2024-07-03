@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-export const ImageSwiper = ({images}) => {
+export const ImageSwiper = ({images, title}) => {
   return (
    
       <Swiper
@@ -21,43 +21,43 @@ export const ImageSwiper = ({images}) => {
           >
     
               <SwiperSlide >
-              <img src={images[0]} alt='ecosolution' loading="lazy"/>
+              <img src={images[0]} alt={title} loading="lazy"/>
           </SwiperSlide>
           <SwiperSlide >
-              <img src={images[1]} alt='ecosolution' loading="lazy"/>
+              <img src={images[1]} alt={title} loading="lazy"/>
       </SwiperSlide>
        <SwiperSlide >
-              <img src={images[2]} alt='ecosolution' loading="lazy"/>
+              <img src={images[2]} alt={title} loading="lazy"/>
       </SwiperSlide>
        <SwiperSlide >
-              <img src={images[3]} alt='ecosolution' loading="lazy"/>
+              <img src={images[3]} alt={title} loading="lazy"/>
       </SwiperSlide>
        <SwiperSlide >
-              <img src={images[4]} alt='ecosolution' loading="lazy"/>
+              <img src={images[4]} alt={title} loading="lazy"/>
       </SwiperSlide>
        <SwiperSlide >
-              <img src={images[5]} alt='ecosolution' loading="lazy"/>
+              <img src={images[5]} alt={title} loading="lazy"/>
       </SwiperSlide>
        <SwiperSlide >
-              <img src={images[6]} alt='ecosolution' loading="lazy"/>
+              <img src={images[6]} alt={title} loading="lazy"/>
       </SwiperSlide>
        <SwiperSlide >
-              <img src={images[7]} alt='ecosolution' loading="lazy"/>
+              <img src={images[7]} alt={title} loading="lazy"/>
       </SwiperSlide>
        <SwiperSlide >
-              <img src={images[8]} alt='ecosolution' loading="lazy"/>
+              <img src={images[8]} alt={title} loading="lazy"/>
       </SwiperSlide>
        <SwiperSlide >
-              <img src={images[9]} alt='ecosolution' loading="lazy"/>
+              <img src={images[9]} alt={title} loading="lazy"/>
       </SwiperSlide>
        <SwiperSlide >
-              <img src={images[10]} alt='ecosolution' loading="lazy"/>
+              <img src={images[10]} alt={title} loading="lazy"/>
       </SwiperSlide>
        <SwiperSlide >
-              <img src={images[11]} alt='ecosolution' loading="lazy"/>
+              <img src={images[11]} alt={title} loading="lazy"/>
       </SwiperSlide>
        <SwiperSlide >
-              <img src={images[12]} alt='ecosolution' loading="lazy"/>
+              <img src={images[12]} alt={title} loading="lazy"/>
             </SwiperSlide>
            
           

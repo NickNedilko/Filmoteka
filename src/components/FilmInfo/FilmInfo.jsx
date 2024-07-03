@@ -87,7 +87,7 @@ const imagesArr = images.map(({file_path} )=> `https://image.tmdb.org/t/p/w500${
             <>
                 {!error && isLoading ? <Loader /> : <GalleryTitle>Movie images</GalleryTitle>}
                 
-        <ImageSwiper images={imagesArr } />
+          <ImageSwiper images={imagesArr} title={title} />
             </>
             
       
