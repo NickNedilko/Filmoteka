@@ -46,3 +46,8 @@ export const Poster = styled.img`
     height: 450px;
     object-fit: cover;
 `
+export  const Btn = styled.button`
+    position: absolute;
+    top: 15px;
+    right: 20px;
+`

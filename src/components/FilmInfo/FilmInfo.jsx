@@ -81,7 +81,7 @@ const imagesArr = images.map(({file_path} )=> `https://image.tmdb.org/t/p/w500${
                       document.querySelector('#modal-root')
                     )}
                 </Wrapper>
-                <AddWatchList watchlist={isAddWatchList } />
+                <AddWatchList watchlist={isAddWatchList } onClick={() => toggleWatchList(film)} />
 
             </FilmCard>
             <>

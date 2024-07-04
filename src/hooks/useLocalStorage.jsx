@@ -13,7 +13,7 @@ export const useLocalStorage = ()=>{
 
 const addToLocal = (film)=>{
     const savedWatchList = getLocal();
-    savedWatchList.push(film)
+    savedWatchList.unshift(film)
     setWatchList(savedWatchList)
     setLocal(savedWatchList);
 }

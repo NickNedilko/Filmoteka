@@ -10,6 +10,7 @@ import { NotFindPage } from './pages/NotFindPage/NotFindPage';
 
 const Home = lazy(() => import('./pages/Home/Home'));
 const UpComingMoviesPage = lazy(()=> import('./pages/UpcomingMoviesPage/UpcomingMoviesPage'));
+const WatchListPage = lazy(()=> import('./pages/WatchListPage/WatchListPage'));
 
 const MoviesPage = lazy(()=> import('./pages/MoviesPage/MoviesPage'));
 const MovieDetailsPage = lazy(() => import('./pages/MovieDetailsPage/MovieDetailsPage'));
@@ -25,6 +26,7 @@ function App() {
         <Route path='/' element={<SharedLayout/>}>
           <Route index element={<Home/>}/>
           <Route path='movies' element={<MoviesPage />} />
+          <Route path='watchlist' element={<WatchListPage/>}/>
           <Route path='upcoming' element={<UpComingMoviesPage/>}/>
           <Route path='movies/:id' element={<MovieDetailsPage />}>
             <Route path='cast' element={<MovieCast/>}/> 

@@ -21,6 +21,9 @@ export const AppBar = () => {
           <li><StyledLink to="/" 
           aria-label='home'
             onClick={(e) => e.target.blur()}>Home</StyledLink></li>
+          <li><StyledLink to="watchlist" 
+          aria-label='watchlist'
+          onClick={(e) => e.target.blur()}>Watchlist</StyledLink></li>
           <li><StyledLink to="upcoming" 
           aria-label='upcoming'
           onClick={(e) => e.target.blur()}>Upcoming Films</StyledLink></li>

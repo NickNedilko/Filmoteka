@@ -60,6 +60,7 @@ export const AddWatchList = styled(FaHeart)`
     top: 15px;
     right: 20px;
     fill: aliceblue;
+    cursor: pointer;
     font-size: 35px;
     fill: ${(props)=>(props.watchlist ? "red" : "white")}
 `
